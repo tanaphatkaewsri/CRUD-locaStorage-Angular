@@ -1,0 +1,25 @@
+<!-- <p>items works!</p> -->
+
+<div class="container">
+  <div class="contain-all">
+    <h1>CRUD with angular and localStorage</h1>
+
+    <div class="contain-body">
+      <h3>Add new item</h3>
+      <form (ngSubmit)="submitForm()">
+        <input type="text" [formControl]="control_item" />
+        <button type="submit">Submit</button>
+      </form>
+
+      <!-- {{ item }} -->
+
+      <br />
+      <h3>Items list</h3>
+      <div class="items">
+        <p>Item1</p>
+        <button>Update</button>
+        <button>Delete</button>
+      </div>
+    </div>
+  </div>
+</div>
