@@ -16,13 +16,17 @@ export class ItemsComponent implements OnInit {
 
   items: any[] = [];
 
+  from_update: boolean = false;
+  index: number = 0;
+
   item: any = '';
   check: boolean = true;
   control_item: FormControl = new FormControl('', [Validators.required]);
 
   ngOnInit(): void {
     this.items = this.dataService.getAllItems();
-    console.log('before: ', this.items);
+    // console.log('before: ', this.items);
+    // console.log('access array: ', this.items[0]); // we got him
   }
 
   submitForm() {
@@ -31,27 +35,38 @@ export class ItemsComponent implements OnInit {
 
     if (!this.control_item.invalid) {
       this.item = this.control_item.value;
-      console.log('OK, Data is: ', this.item);
+      // console.log('OK, Data is: ', this.item);
       // this.dataService.addItems('items', this.item);
-      this.dataService.addItem(this.item);
+      if (this.from_update) {
+        this.dataService.updateItem(this.item, this.index);
+        this.from_update = false;
+      } else {
+        this.dataService.addItem(this.item);
+      }
       this.items = this.dataService.getAllItems();
-      console.log('after: ', this.items);
-
+      // console.log('after: ', this.items);
       this.control_item.setValue('');
       this.check = true;
     } else {
       this.check = false;
-      console.log('Please Fill Data');
+      // console.log('Please Fill Data');
     }
     // this.dataService.getAllData();
   }
 
-  updateItem(item: any) {
-    console.log('update click', item);
+  updateClick(item: any, index: any) {
+    this.from_update = true;
+    // console.log('update click', index);
     this.control_item.setValue(item);
+    this.index = index;
+    // this.item = this.control_item.value;
+    // this.items = this.dataService.getAllItems();
   }
 
-  deleteItem(item: any) {
-    console.log('delete click', item);
+  deleteClick(index: any) {
+    // console.log('delete item click', item);
+    // console.log('delete index click', index);
+    this.dataService.deleteItem(index);
+    this.items = this.dataService.getAllItems();
   }
 }

@@ -34,6 +34,23 @@ export class DataService {
     localStorage.setItem('items', JSON.stringify(filter_items));
   }
 
+  updateItem(value: any, index: any) {
+    let items = this.getAllItems();
+    // console.log('value: ', value);
+    // console.log('index: ', index);
+    // console.log('after update:', items);
+    items[index] = value;
+    // console.log('before update:', items);
+    const filter_items = this.removeDuplicate(items);
+    localStorage.setItem('items', JSON.stringify(filter_items));
+  }
+
+  deleteItem(index: any) {
+    let items = this.getAllItems();
+    items.splice(index, 1);
+    localStorage.setItem('items', JSON.stringify(items));
+  }
+
   removeDuplicate(arr: any[]): any[] {
     return arr.filter((value, index, self) => {
       return self.indexOf(value) === index;

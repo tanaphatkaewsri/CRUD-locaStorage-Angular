@@ -16,10 +16,12 @@
 
       <br />
       <h3>Items list</h3>
-      <div class="items" *ngFor="let item of items">
+      <div class="items" *ngFor="let item of items; let i = index">
+        <!-- <input type="text" value="{{ item }}" [(ngModel)]="updateItem" /> -->
+        <!-- <p>index: {{ i }}</p> -->
         <p>{{ item }}</p>
-        <button (click)="updateItem(item)">Update</button>
-        <button (click)="deleteItem(item)">Delete</button>
+        <button (click)="updateClick(item, i)">Update</button>
+        <button (click)="deleteClick(i)">Delete</button>
       </div>
     </div>
   </div>
