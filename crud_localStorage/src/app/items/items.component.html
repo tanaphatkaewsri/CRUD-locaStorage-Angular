@@ -2,12 +2,13 @@
 
 <div class="container">
   <div class="contain-all">
-    <h1>CRUD with angular and localStorage</h1>
+    <h2>CRUD with angular and localStorage</h2>
 
     <div class="contain-body">
       <h3>Add new item</h3>
+      <p style="color: red" *ngIf="!check">Please Filled Data</p>
       <form (ngSubmit)="submitForm()">
-        <input type="text" [formControl]="control_item" />
+        <input type="text" [formControl]="control_item" required />
         <button type="submit">Submit</button>
       </form>
 
@@ -15,10 +16,10 @@
 
       <br />
       <h3>Items list</h3>
-      <div class="items">
-        <p>Item1</p>
-        <button>Update</button>
-        <button>Delete</button>
+      <div class="items" *ngFor="let item of items">
+        <p>{{ item }}</p>
+        <button (click)="updateItem(item)">Update</button>
+        <button (click)="deleteItem(item)">Delete</button>
       </div>
     </div>
   </div>
