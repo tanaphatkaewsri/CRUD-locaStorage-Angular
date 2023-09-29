@@ -2,23 +2,19 @@
 
 <div class="container">
   <div class="contain-all">
-    <h2>CRUD with angular and localStorage</h2>
-
-    <div class="contain-body">
-      <h3>Add new item</h3>
+    <div class="contain-head">
+      <h2 style="color: aliceblue">CRUD with Angular and LocalStorage</h2>
+      <h3 style="color: aliceblue">Add new item</h3>
       <p style="color: red" *ngIf="!check">Please Filled Data</p>
       <form (ngSubmit)="submitForm()">
         <input type="text" [formControl]="control_item" required />
         <button type="submit">Submit</button>
       </form>
+    </div>
 
-      <!-- {{ item }} -->
-
-      <br />
+    <div class="contain-body">
       <h3>Items list</h3>
       <div class="items" *ngFor="let item of items; let i = index">
-        <!-- <input type="text" value="{{ item }}" [(ngModel)]="updateItem" /> -->
-        <!-- <p>index: {{ i }}</p> -->
         <p>{{ item }}</p>
         <button (click)="updateClick(item, i)">Update</button>
         <button (click)="deleteClick(i)">Delete</button>

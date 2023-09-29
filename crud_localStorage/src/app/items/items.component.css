@@ -2,6 +2,43 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    /* border: 2px solid red; */
+}
+
+.contain-all {
+    border: 2px solid black;
+    /* padding: 10px; */
+    border-radius: 10px;
+}
+
+.contain-head {
+    padding: 10px;
+    /* border: 2px solid red; */
+    border-radius: 10px;
+    padding-bottom: 40px;
+    background-image: linear-gradient(green, lightgreen);
+}
+
+form>input {
+    margin-right: 10px;
+}
+
+.contain-body {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.contain-body>h3 {
+    border: 2px solid black;
+    border-radius: 5px;
+    width: 100px;
+    display: flex;
+    justify-content: center;
+    background-color: black;
+    color: white;
 }
 
 form {
@@ -10,16 +47,36 @@ form {
     justify-content: space-between;
 }
 
-.items {
+/* .items {
     display: flex;
     justify-content: space-around;
     align-items: center;
     padding: 0px;
     margin: 0px;
     width: 200px;
+} */
+
+.items {
+    display: grid;
+    grid-template-columns: 200px 80px 50px;
+    /* border: 2px solid black; */
+    gap: 10px;
+    margin-bottom: 5px;
+}
+
+p {
+    /* border: 2px solid black; */
+    margin: 0px;
 }
 
 button {
-    width: 57.06px;
-    height: 20.67px;
+    border: 2px solid black;
+    width: 60px;
+    height: 27px;
+    cursor: pointer;
+}
+
+button:active {
+    background-color: black;
+    color: white;
 }
