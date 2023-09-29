@@ -5,10 +5,10 @@
     <div class="contain-head">
       <h2 style="color: aliceblue">CRUD with Angular and LocalStorage</h2>
       <h3 style="color: aliceblue">Add new item</h3>
-      <p style="color: red" *ngIf="!check">Please Filled Data</p>
+      <p style="color: yellow" *ngIf="!check">Please Filled Data</p>
       <form (ngSubmit)="submitForm()">
         <input type="text" [formControl]="control_item" required />
-        <button type="submit">Submit</button>
+        <button type="submit" [disabled]="control_item.invalid">Submit</button>
       </form>
     </div>
 

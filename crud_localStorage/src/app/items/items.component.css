@@ -1,14 +1,18 @@
 .container {
+    margin-top: 50px;
     display: flex;
     justify-content: center;
     align-items: center;
     /* border: 2px solid red; */
+    /* background-color: white; */
 }
 
 .contain-all {
-    border: 2px solid black;
+    /* border: 2px solid black; */
     /* padding: 10px; */
     border-radius: 10px;
+    background-color: wheat;
+    box-shadow: 10px 10px 10px black;
 }
 
 .contain-head {
@@ -29,6 +33,7 @@ form>input {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin-bottom: 30px;
 }
 
 .contain-body>h3 {
@@ -39,6 +44,7 @@ form>input {
     justify-content: center;
     background-color: black;
     color: white;
+    margin-bottom: 35px;
 }
 
 form {
@@ -61,7 +67,7 @@ form {
     grid-template-columns: 200px 80px 50px;
     /* border: 2px solid black; */
     gap: 10px;
-    margin-bottom: 5px;
+    margin-bottom: 10px;
 }
 
 p {
